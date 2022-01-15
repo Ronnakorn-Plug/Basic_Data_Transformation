@@ -240,11 +240,11 @@ dbDisconnect(conn)
 library(RPostgreSQL)
 
 conn <- dbConnect(PostgreSQL(),
-                  user = "srikbkol",
-                  password = "tfwPdK4ebvE_JHtbZsC08uWxiZ_gh3Ro",
+                  user = "sr*****ol",
+                  password = "tfw**********************h3Ro",
                   host = "arjuna.db.elephantsql.com",
                   port = 5432,
-                  dbname = "srikbkol")
+                  dbname = "sr*****ol")
 
 dbListTables(conn)
 
