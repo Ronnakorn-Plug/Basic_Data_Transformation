@@ -82,6 +82,7 @@ glimpse(employee)
 ### เวลาทำงานใน data ต้องมั่นใจว่า data type ถูกต้อง
 
 year(employee$StartDate)
+month(employee$StartDate)
 month(employee$StartDate, label=TRUE)
 day(employee$StartDate)
 wday(employee$StartDate)
@@ -241,14 +242,22 @@ library(RPostgreSQL)
 conn <- dbConnect(PostgreSQL(),
                   user = "srikbkol",
                   password = "tfwPdK4ebvE_JHtbZsC08uWxiZ_gh3Ro",
-                  host = "arjuna.db.elephantsql.com (arjuna-01)",
+                  host = "arjuna.db.elephantsql.com",
                   port = 5432,
                   dbname = "srikbkol")
 
-## ไม่ทัน11:55:00
+dbListTables(conn)
 
+# upload df to postgresql database server
+dbWriteTable(conn, "data_test", mtcars)
 
+dbListFields(conn, "data_test")
 
+# get data
+result <- dbGetQuery(conn, "SELECT * FROM data_test LIMIT 5")
+
+# Close Connection
+dbDisconnect(conn)
 
 
 ## ---------------------------------------------##
@@ -283,7 +292,7 @@ inner_join(student, address, by = "id")
 left_join(student, address, by = "id")
 
 student %>% 
-  left_join(student, address, by = "id") %>%
+  left_join(address, by = "id") %>%
   inner_join(scholarship, by = "id")
 
 student <- student %>%
@@ -292,7 +301,6 @@ student <- student %>%
 student %>%
   left_join(address, by = c("student_id" = "id")) %>%
   inner_join(scholarship, by = c("student_id" = "id"))
-
 
 
 
