@@ -1,0 +1,7 @@
+<email>
+    <from>toy@datarockie</from>
+    <to>students@data-science-bootcamp.com</to>
+    <subject>Welcome to our course</subject>
+    <content>I hope you enjoy the class</content>
+    <date>16 January 2021</date>
+</email>

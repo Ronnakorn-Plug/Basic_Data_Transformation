@@ -1,0 +1,6 @@
+id;name;major
+6;Kevin;Business
+7;Johnson;Business
+8;Kobayashi;Business
+9;Takeru;Business
+10;Henry;Business

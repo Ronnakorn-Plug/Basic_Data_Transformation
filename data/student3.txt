@@ -1,0 +1,6 @@
+id	name	major
+11	Ronaldo	Social Science
+12	Takeo	Social Science
+13	Victoria	Social Science
+14	Hamlet	Social Science
+15	Susanne	Social Science
